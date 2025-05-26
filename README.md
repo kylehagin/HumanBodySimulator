@@ -4,6 +4,10 @@ This project provides a modular scaffold for simulating the human body. Each org
 represented as a separate module with its own update and interaction logic. The project
 is structured as a Python package named `body_sim`.
 
+The organ models include simple approximations of biochemical pathways and physical
+dynamics. An overview of the implemented models can be found in
+`docs/organ_models.md`.
+
 ## Structure
 
 - `body_sim/organ.py` – base `Organ` class used by all organs.
@@ -25,5 +29,6 @@ python scripts/run_simulation.py
 This will instantiate a `Simulation` object with a default `Body` containing several
 organs and run it for 10 seconds of simulated time.
 
-Organ update and interaction logic is intentionally left as TODOs so that future
-contributors can implement detailed physical and chemical processes.
+The current implementation contains lightweight approximations of several
+biochemical processes, but these models are deliberately simple.  Contributors
+are encouraged to extend them with more detailed physiology as needed.

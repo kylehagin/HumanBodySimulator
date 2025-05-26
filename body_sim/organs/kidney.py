@@ -8,13 +8,15 @@ class Kidney(Organ):
     def __init__(self):
         super().__init__("kidney")
         self.state["filtration_rate"] = 1.2  # L/hour
+        self.state["waste"] = 0.0
+        self.state["water_balance"] = 0.0
 
     def update(self, dt: float) -> None:
         """Update waste filtration."""
-        # TODO: implement filtration mechanics
-        pass
+        rate = self.state["filtration_rate"]
+        self.state["waste"] = max(0.0, self.state["waste"] - rate * dt)
 
     def interact(self, other: Organ) -> None:
         """Interactions with other organs."""
-        # TODO: implement interaction logic
-        pass
+        del other
+
